@@ -1,0 +1,247 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+
+
+
+body{
+
+background:linear-gradient(#3e2723,#120000);
+
+color:#fff;
+
+text-align:center;
+
+overflow:hidden;
+
+}
+
+
+
+/* LOCK */
+
+#lock{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+#lock input{
+
+padding:10px;border-radius:20px;border:none;text-align:center;
+
+}
+
+
+
+/* GENERAL */
+
+.hidden{display:none}
+
+button{
+
+padding:10px 22px;
+
+border:none;
+
+border-radius:25px;
+
+background:#ff5fa2;
+
+color:white;
+
+font-size:16px;
+
+}
+
+
+
+/* COUNTER + NAME */
+
+#counter{font-size:14px;margin-top:10px}
+
+#name{height:40px;margin:10px}
+
+
+
+/* SCENE */
+
+.scene{
+
+position:relative;
+
+height:220px;
+
+margin-top:20px;
+
+}
+
+.boy,.girl{
+
+width:60px;height:120px;
+
+border-radius:20px;
+
+position:absolute;bottom:0;
+
+}
+
+.boy{
+
+left:25%;
+
+background:#4fc3f7;
+
+animation:dance 2s infinite;
+
+}
+
+.girl{
+
+right:25%;
+
+background:#f48fb1;
+
+animation:dance 2s infinite reverse;
+
+}
+
+
+
+/* DANCE SPOTLIGHT */
+
+.scene::after{
+
+content:'';
+
+position:absolute;
+
+inset:0;
+
+background:radial-gradient(circle,rgba(255,255,255,.3),transparent 60%);
+
+pointer-events:none;
+
+filter:blur(8px);
+
+}
+
+
+
+@keyframes dance{
+
+0%{transform:translateY(0)}
+
+50%{transform:translateY(-12px)}
+
+100%{transform:translateY(0)}
+
+}
+
+
+
+.line{margin:10px;font-style:italic}
+
+
+
+/* GALLERY */
+
+.gallery{position:relative;height:65vh}
+
+.photo{
+
+position:absolute;width:100%;
+
+opacity:0;transition:1s;
+
+}
+
+.photo.active{opacity:1}
+
+.photo img{
+
+width:70%;max-width:260px;
+
+border-radius:20px;
+
+box-shadow:0 0 25px #000;
+
+}
+
+
+
+/* HANDWRITING */
+
+.handwrite{
+
+font-family:cursive;
+
+font-size:32px;
+
+animation:write 3s steps(30);
+
+white-space:nowrap;
+
+overflow:hidden;
+
+border-right:2px solid white;
+
+width:0;
+
+margin-top:40px;
+
+}
+
+@keyframes write{to{width:100%}}
+
+
+
+/* FIREWORK */
+
+.firework{
+
+position:fixed;
+
+width:6px;height:6px;
+
+background:gold;
+
+border-radius:50%;
+
+animation:boom 1.2s forwards;
+
+}
+
+@keyframes boom{
+
+to{transform:scale(20);opacity:0}
+
+}
+
+
+
+/* RAIN */
+
+.rain{
+
+position:fixed;
+
+top:-10%;
+
+font-size:24px;
+
+animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+to{transform:translateY(110vh);opacity:0}
+
+}
